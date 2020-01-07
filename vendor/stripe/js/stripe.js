@@ -12,7 +12,7 @@ $( "#payment_option" ).submit(function( event ) {
 
 	stripe.createSource({
 	  type: 'giropay',
-	  amount: 1,
+	  amount: 100,
 	  currency: 'eur',
 	  owner: {
 		name: 'Eric Tizie',
