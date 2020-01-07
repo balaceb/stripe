@@ -2,7 +2,7 @@
 
 
 $( "#payment_option" ).submit(function( event ) {
-  //alert( "Handler for .submit() called." );
+  
   event.preventDefault();
   
 	// Set your publishable key: remember to change this to your live publishable key in production
@@ -23,6 +23,17 @@ $( "#payment_option" ).submit(function( event ) {
 	  },
 	}).then(function(result) {
 	  // handle result.error or result.source
+	  
+	  if(undefined !== result.source)
+	  {
+		 window.location.replace(result.source.redirect.url); 
+	  }
+	  else
+	  {
+		// error
+		alert( "Payment Gateway Error! Contact Admin" );
+	  }
+	  
 	  
 	  console.log('sourceObject', result);
 	});
