@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Bare - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/stripe/css/stripe.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/fontawesome.css" integrity="sha256-QBvqtqKjGXBY1kA5EJchzbjekaJQxEuyvuj9ubugrvE=" crossorigin="anonymous" />
+
+	<script src="https://js.stripe.com/v3/"></script>
+	
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="www.en3ticket.com">EN3TICKET Payment Gateway Interface</a>
+	  <!--
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+	  
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+		
+		<ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+		
+      </div>
+	 --> 
+    </div>
+  </nav>
+  
+
+
+  <!-- Page Content -->
+	<div class="container">
+    <div class="row">
+		<div class="col-lg-12">
+			<h1 class="mt-5 text-center">Stripe Payment Processing</h1>
+			<p class="lead text-center">Select your desired payment method below and continue!</p>
+			<h6 class="text-center">(Secure payment processed by <a href="www.stripe.com" >Stripe)</a></h6>
+		
+		
+			<div class="jumbotron d-flex justify-content-center">
+				<form id="payment_option" action="">
+
+					<div class="form-check">
+					
+						<div class="row">
+							
+							<div class="col-sm-5">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="optradio">
+									Visa Card
+								</label>
+							</div>
+							<div class="col-sm-1">
+								
+							</div>
+							<div class="col-sm-1">
+								<img src="logos/visa.svg" alt="Visa" height="60%" >
+							</div>
+
+						</div>
+
+						
+					</div>
+					<div class="form-check">
+					
+						<div class="row">
+							
+							<div class="col-sm-5">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="optradio">
+									Master Card
+								</label>
+							</div>
+							<div class="col-sm-1">
+								
+							</div>
+							<div class="col-sm-1">
+								<img src="logos/mastercard.svg" alt="MasterCard" height="65%" >
+							</div>
+
+						</div>						
+					</div>
+					
+					
+					<div class="form-check">
+					
+						<div class="row">
+							
+							<div class="col-sm-5">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="optradio">
+									Diners-Club Card
+								</label>
+							</div>
+							<div class="col-sm-1">
+								
+							</div>
+							<div class="col-sm-1">
+								<img src="logos/diners.svg" alt="Diners" height="60%" >
+							</div>
+
+						</div>						
+					</div>
+					
+					<div class="form-check">
+					
+						<div class="row">
+							
+							<div class="col-sm-5">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="optradio">
+									American Express Card
+								</label>
+							</div>
+							<div class="col-sm-1">
+								
+							</div>
+							<div class="col-sm-1">
+								<img src="logos/amex.svg" alt="Amex" height="60%" >
+							</div>
+
+						</div>						
+					</div>
+					
+					<div class="form-check">
+					
+						<div class="row">
+							
+							<div class="col-sm-5">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="optradio">
+									Multibanco (Portugal)
+								</label>
+							</div>
+							<div class="col-sm-1">
+								
+							</div>
+							<div class="col-sm-1">
+								<img src="logos/multibanco.png" alt="Multibanco" height="60%" >
+							</div>
+						</div>						
+					</div>
+					<div class="form-check">
+					
+						<div class="row">
+							
+							<div class="col-sm-5">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="optradio">
+									GiroPay (Germany)
+								</label>
+							</div>
+							<div class="col-sm-1">
+								
+							</div>
+							<div class="col-sm-1">
+								<img src="logos/giropay.svg" alt="GiroPay" height="60%" >
+							</div>
+
+						</div>						
+					</div>
+					
+					
+					<div class="form-check">
+					
+						<div class="row">
+							
+							<div class="col-sm-5">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="optradio">
+									Sofortüberweisung <br>(Austria, Belgium, Germany, Italy, Netherlands, Poland, Spain, Switzerland)
+								</label>
+							</div>
+							<div class="col-sm-1">
+								
+							</div>
+							<div class="col-sm-1">
+								<img src="logos/sofortlogo.png" alt="Sofort" >
+								
+							</div>
+
+						</div>						
+					</div>
+					
+					<br>
+					
+					<div class="form-check">
+					
+						<div class="row">
+							
+							<div class="col-sm-5">
+								<label class="form-check-label">
+									<input type="radio" class="form-check-input" name="optradio">
+									iDeal (Netherlands)
+								</label>
+							</div>
+							<div class="col-sm-1">
+								
+							</div>
+							<div class="col-sm-1">
+								<img src="logos/ideallogo.svg" alt="iDeal" height="35%" >
+							</div>
+
+						</div>						
+					</div>
+									
+					
+					<button type="submit" class="btn btn-primary">Continue</button>
+				</form>
+			</div>
+
+
+        
+		</div>
+    </div>
+  </div>
+
+
+
+
+
+	
+
+
+
+		
+		
+	<div>Copyright by <a href="https://www.en3ticket.com" title="EN3TICKET">en3ticket</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.en3ticket.com</a></div>
+	
+	<footer>
+  <p>Posted by: Admin</p>
+  <p>Contact information: <a href="mailto:admin@en3ticket.com">admin@en3ticket.com</a>.</p>
+</footer>
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.slim.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="https://js.stripe.com/v3/"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/js/brands.min.js" integrity="sha256-cgiky4DPwQlMhippLr/HykwJTaM5gR8Kl5Z4zqrwgpA=" crossorigin="anonymous"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  
+	<script src="vendor/stripe/js/stripe.js"></script>
+	
+  
+</body>
+
+</html>
