@@ -2,4 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/cashtwo5/public_html/en3ticket/stripe/
-    - /bin/cp -r * $DEPLOYPATH
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp index.php $DEPLOYPATH
+#    - /bin/cp -r * $DEPLOYPATH
